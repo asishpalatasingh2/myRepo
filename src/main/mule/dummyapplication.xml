@@ -12,7 +12,8 @@ http://www.mulesoft.org/schema/mule/os http://www.mulesoft.org/schema/mule/os/cu
 	</http:listener-config>
 	<flow name="dummyapplicationFlow" doc:id="8a8eaac3-7eec-4808-a520-ac1a662d08c6" >
 		<http:listener doc:name="Listener" doc:id="3649f774-a377-45af-8a0d-98a928c29e1c" config-ref="HTTP_Listener_config" path="/cicd"/>
-		<logger level="INFO" doc:name="Logger" doc:id="b11b0385-2008-4c83-b6cd-8f8d7dcb2ea6" message="#[payload]"/>
+		<logger level="INFO" doc:name="Logger" doc:id="b11b0385-2008-4c83-b6cd-8f8d7dcb2ea6" message='#["Start Logger"]'/>
 		<set-payload value='#["Hi guys..CICD test is completed"]' doc:name="Set Payload" doc:id="7f93b535-29fa-48a2-8323-b1f97dfad927" />
+		<logger level="INFO" doc:name="Logger" doc:id="fb0b3677-352d-42af-a9ac-12fa4ee75101" message='#["End Logger"]'/>
 	</flow>
 </mule>
